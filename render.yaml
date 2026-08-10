@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ai-study-lab
+    runtime: docker
+    plan: free
+    rootDir: IA/llm-fundamentals-to-agents
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
