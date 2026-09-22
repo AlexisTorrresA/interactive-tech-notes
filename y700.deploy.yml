@@ -1,0 +1,26 @@
+version: 1
+name: ai-study-lab
+image: ghcr.io/alexistorrresa/ai-study-lab:main
+container_name: y700-ai-study-lab
+container_port: 10000
+command:
+  - uvicorn
+  - app.main:app
+  - --host
+  - 0.0.0.0
+  - --port
+  - "10000"
+public:
+  enabled: true
+  subdomain: ai-study-lab
+healthcheck:
+  path: /api/health
+database:
+  postgres: false
+  name: ai_study_lab
+secrets:
+  required: []
+  optional: []
+resources:
+  memory: 1g
+  cpus: 1.0
