@@ -35,7 +35,7 @@ jobs:
 
       - name: Run tests
         working-directory: ${{ env.APP_DIR }}
-        run: pytest -q
+        run: python -m pytest -q
 
       - name: Validate Python source
         working-directory: ${{ env.APP_DIR }}
